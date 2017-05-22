@@ -2,7 +2,6 @@ package com.example.controllers;
 
 
 import com.example.models.JoinResponse;
-import com.example.models.OntologyInstance;
 import com.example.models.Pie;
 import com.example.models.ThinKP;
 import com.example.repositories.PieRepository;
