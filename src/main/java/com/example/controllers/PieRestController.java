@@ -80,7 +80,7 @@ public class PieRestController {
 					"https://sofia2.com/sib-api/api/v1/mbricenotester/"
 					, HttpMethod.POST
 					, request
-					, Object.class);
+					, String.class);
 			
         	/*JoinResponse join = joinResponse.getBody();
          	
