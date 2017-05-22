@@ -2,6 +2,7 @@ package com.example.controllers;
 
 
 import com.example.models.JoinResponse;
+//import com.example.models.OntologyInstance;
 import com.example.models.Pie;
 import com.example.models.ThinKP;
 import com.example.repositories.PieRepository;
@@ -74,7 +75,7 @@ public class PieRestController {
 					"https://sofia2.com/sib-api/api/v1/mbricenotester/"
 					, HttpMethod.POST
 					, request
-					, JoinResponse.class);
+					, Object.class);
 			
         	/*JoinResponse join = joinResponse.getBody();
          	
