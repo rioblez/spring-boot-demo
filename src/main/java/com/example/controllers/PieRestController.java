@@ -2,6 +2,7 @@ package com.example.controllers;
 
 
 import com.example.models.JoinResponse;
+import com.example.models.OntologyInstance;
 import com.example.models.Pie;
 import com.example.models.ThinKP;
 import com.example.repositories.PieRepository;
@@ -60,6 +61,29 @@ public class PieRestController {
         	System.out.println(input.getName());
         	return new ResponseEntity<Object>(HttpStatus.OK);
         }
+        
+        @RequestMapping(method = RequestMethod.POST, value = "/toSofia2")
+        public ResponseEntity<?> toSofia2(@RequestBody Object input) {
+
+			RestTemplate restTemplate = new RestTemplate();
+			HttpHeaders headers = new HttpHeaders();
+			headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
+			headers.set("X-SOFIA2-APIKey", "19ac492f7dad412faab7a1c8ef469b3b");
+			HttpEntity<?> request = new HttpEntity<Object>(input, headers);
+			
+			ResponseEntity<?> joinResponse = restTemplate.exchange(
+					"https://sofia2.com/sib-api/api/v1/mbricenotester/"
+					, HttpMethod.POST
+					, request
+					, JoinResponse.class);
+			
+        	/*JoinResponse join = joinResponse.getBody();
+         	
+        	System.out.println(join.getSessionKey());*/
+			
+			return new ResponseEntity<Object>(HttpStatus.OK);
+        }
+        
         
         @RequestMapping(method = RequestMethod.POST, value = "/join")
         public ResponseEntity<?> joinRequest(@RequestBody ThinKP input){
