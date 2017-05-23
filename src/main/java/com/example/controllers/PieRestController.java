@@ -77,7 +77,7 @@ public class PieRestController {
 			HttpEntity<?> request = new HttpEntity<Object>(input, headers);
 			
 			ResponseEntity<?> joinResponse = restTemplate.exchange(
-					"https://sofia2.com/sib-api/api/v1/mbricenotester/"
+					"https://sofia2.com/sib-api/api/v2/mbricenotester"
 					, HttpMethod.POST
 					, request
 					, String.class);
