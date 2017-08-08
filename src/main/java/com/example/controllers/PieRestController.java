@@ -72,8 +72,8 @@ public class PieRestController {
 			disable();
 			RestTemplate restTemplate = new RestTemplate();
 			HttpHeaders headers = new HttpHeaders();
-			//headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
-			//headers.set("X-SOFIA2-APIKey", "19ac492f7dad412faab7a1c8ef469b3b");
+			headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
+			headers.set("X-SOFIA2-APIKey", "19ac492f7dad412faab7a1c8ef469b3b");
 			HttpEntity<?> request = new HttpEntity<Object>("{\"demoTTNConnect\":"+input+"}", headers);
 			
 			ResponseEntity<?> joinResponse = restTemplate.exchange(
