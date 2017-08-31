@@ -67,7 +67,7 @@ public class PieRestController {
         }
         
         @RequestMapping(method = RequestMethod.POST, value = "/toSofia2")
-        public ResponseEntity<?> toSofia2(@RequestBody String input) {
+        public ResponseEntity<?> toSofia2(@RequestBody Object input) {
 
 			disable();
 			RestTemplate restTemplate = new RestTemplate();
