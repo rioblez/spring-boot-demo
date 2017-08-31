@@ -67,7 +67,7 @@ public class PieRestController {
         }
         
         @RequestMapping(method = RequestMethod.POST, value = "/toSofia2")
-        public ResponseEntity<?> toSofia2(@RequestBody Object input) {
+        public ResponseEntity<?> toSofia2(@RequestBody String input) {
 
 			disable();
 			RestTemplate restTemplate = new RestTemplate();
@@ -75,7 +75,8 @@ public class PieRestController {
 			headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
 			headers.set("X-SOFIA2-APIKey", "19ac492f7dad412faab7a1c8ef469b3b");
 			//HttpEntity<?> request = new HttpEntity<Object>("{\"demoTTNConnect\":"+input+"}", headers);
-			HttpEntity<?> request = new HttpEntity<Object>(input, headers);
+			HttpEntity<?> request = new HttpEntity<Object>(""+input, headers);
+			//HttpEntity<?> request = new HttpEntity<Object>(input, headers);
 			ResponseEntity<?> joinResponse = restTemplate.exchange(
 					"https://sofia2.com/sib-api/api/v2/demoTTN"
 					, HttpMethod.POST
